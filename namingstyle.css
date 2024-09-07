@@ -1,0 +1,96 @@
+*{
+    border-color: brown;
+}
+
+body{
+    background: wheat;
+    height: 100%;
+    padding: 70px 0px 100px 500px;
+}
+
+.naming-card{
+    position: relative;
+    width:300px;
+    height: 395px;
+    border: 10px solid rgb(42, 151, 165);
+    margin: 100px auto o auto;
+   
+    box-shadow: inset 10px 0px 15px 0px rgba(0,0,0,0.1);
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.5)),url("https://t3.ftcdn.net/jpg/07/58/44/58/240_F_758445879_TpAFs3mCiKLaf62yX03W7XDxLlATMUKh.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.text{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    font-family:'Nobile', sans-serif;
+}
+
+.text p{
+    font-size: 1.1em;
+    color: rgb(2, 99, 62);
+    list-style: 1.4;
+    font-style: italic;
+    text-align: center;
+    margin: 10px auto 0 auto;
+}
+
+.text .title{
+    font-size: 1.5em;
+    margin: 30px auto 30px auto;
+}
+
+.cover-outer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: -10px 0 0 -10px;
+    border: 10px solid rgb(218, 247, 235);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform-origin: 0% 50%;
+    transform: perspective(800px) rotate(0deg);
+    transition: all 0.8s ease-in-out;
+}
+
+.cover-outer img{
+    height:395px;
+    width: 300px;
+    box-shadow: 0px 6px 11px 7px rgba(0,0,0,0.22);
+    border-radius: 5px;
+}
+
+.cover-inner{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 10px solid rgb(42, 151, 165);;
+    background-color: rgb(0, 247, 255);
+    margin: -10px 0px 0 -10px;
+    backface-visibility: visible;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+    transform-style: preserve-3d;
+    transform-origin: 0% 50%;
+    transform: perspective(800px) rotate(0deg);
+    transition: all 0.8s ease-in-out;
+    overflow: hidden;
+}
+.cover-inner img{
+    transform: rotateY('170deg');
+}
+
+
+.naming-card:hover{
+    .cover-outer{
+        transform: perspective(800px) rotateY(-170deg);
+    }
+    .cover-inner{
+        transform: perspective(800px) rotateY(-170deg);
+        box-shadow: 7px 0 5px 0 rgba(0,0,0,0.3),inset 2px 0px 15px 0px rgba(0,0,0,0.1) ;
+    }
+}
+
